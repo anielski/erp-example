@@ -1,5 +1,5 @@
 # ORM Example v1.0.0
-orm + Symfony4
+orm + Symfony5
 
 
 ## Setup
