@@ -1,0 +1,36 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+    Project
+{% endblock %}
+
+{% block body %}
+    <h1>List of projects with high priority tasks</h1>
+    {% if projects %}
+        <table class="table table-striped" id="projects">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Customer</th>
+                <th>Progress</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for project in projects %}
+                <tr>
+                    <td>{{ project.name }}</td>
+                    <td>{{ project.customer.name ~ " " ~ project.customer.surname }}</td>
+                    <td>{{ project.progress }}</td>
+                    <td><a href="/task/list/{{ project.id }}" class="nav-link">tasks</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <div class="navigation">
+        {{ knp_pagination_render(projects) }}
+        </div>
+    {% else %}
+        <p>no projects</p>
+    {% endif %}
+{% endblock %}

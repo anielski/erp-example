@@ -1,0 +1,9 @@
+easy_admin:
+    entities:
+#        # List the entity class name you want to manage
+        - App\Entity\Project
+        - App\Entity\Task
+        - App\Entity\User
+        - App\Entity\Customer
+        - App\Entity\State
+        - App\Entity\Priority
